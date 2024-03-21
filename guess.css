@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #f44336
+}
+
+body {
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+
+  @media screen and (max-width: 576px) {
+    padding: 10px;
+    margin: 0;
+    font-size: 12px;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin: 0 0 50px;
+  background-color: rgb(226, 224, 224);
+  color: var(--primary-color);
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  margin: 0 0 50px;
+  background-color: rgb(226, 224, 224);
+  color: var(--primary-color);
+}
+
+@media (max-width: 576px) {
+  span {
+    font-size: 3px;
+    margin-right: 15px;
+    font-weight: bold;
+
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+
+  }
+}
+
+@media (max-width: 576px) {
+  .guess-game {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: center;
+
+  }
+}
+
+.guess-game {
+  text-align: center;
+  width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .game-area {
+    .inputs {
+      >div {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          font-size: 30px;
+          margin-right: 15px;
+          font-weight: bold;
+          color: var(--primary-color);
+        }
+      }
+
+      .disabled-inputs {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      input {
+        margin: 0 5px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 50px;
+        caret-color: var(--primary-color);
+        background: white;
+        border: none;
+        border-bottom: 3px solid #333;
+        color: black;
+        font-weight: bold;
+
+        &:focus {
+          outline-color: #ccc;
+        }
+
+        &.yes-in-place {
+          background-color: #f89e13;
+          border: #f89e13;
+          color: white;
+        }
+
+        &.not-in-place {
+          background-color: #18ba89;
+          border: #18ba89;
+          color: white;
+        }
+
+        &.no {
+          background-color: #27303f;
+          border: #27303f;
+          color: white;
+        }
+      }
+    }
+
+    .control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      margin: 30px auto;
+      gap: 10px;
+
+      .check {
+        background-color: var(--primary-color);
+        flex: 1;
+      }
+
+      .hint {
+        background-color: #009688;
+        width: fit-content;
+      }
+
+      button {
+        border: none;
+        font-size: 25px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:disabled {
+        background-color: black;
+        opacity: 0.4;
+        cursor: no-drop;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 576px) {
+  .hint {
+    width: fit-content;
+  }
+}
+
+@media(max-width: 576px) {
+  .check {
+    flex: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-area {
+    width: 100%;
+    margin: 20px auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+
+.key-colors {
+  .key-color {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    margin-bottom: 10px;
+
+    .key {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+
+      &.in-place {
+        background-color: #f89e13;
+      }
+
+      &.not-in-place {
+        background-color: #18ba89;
+      }
+
+      &.no {
+        background-color: #27303f;
+      }
+    }
+
+    .key-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .key-colors, .message, .key-color, .key-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+
+
+
+
+  span {
+    font-weight: bold;
+    display: block;
+    font-size: 50px;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-top: 10px;
+  }
+
+
+
+  p {
+    margin-top: 15px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+}
+
+
+@media only screen and (max-width: 576px) {
+  footer {
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 100%;
+  }
+}
